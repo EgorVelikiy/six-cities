@@ -11,22 +11,19 @@ import { PointI } from '../../types/offer-type';
 export default function MainPage(): JSX.Element {
   const dispatch = useDispatch();
 
-  const offers = useSelector((state: RootState) => state.offers.offers)
-  const cityName = useSelector((state: RootState) => state.offers.city)
+  const offers = useSelector((state: RootState) => state.offers.offers);
+  const cityName = useSelector((state: RootState) => state.offers.city);
 
-  const points = offers.map((offer) => offer.location);
-
-  const cityOffers = useMemo(() => {
-    return offers.filter((offer) => offer.city.name === cityName);
-  }, [offers, cityName]);
-
+  const cityOffers = useMemo(() => offers.filter((offer) => offer.city.name === cityName), [offers, cityName]);
   const currentCity = cityOffers[0]?.city;
 
   const [selectedPoint, setSelectedPoint] = useState<PointI | undefined>(undefined);
 
-  const handleChangeCity = (cityName: string) => {
-    dispatch(changeCity(cityName));
-  }
+  const points = cityOffers.map((offer) => offer.location);
+
+  const handleChangeCity = (city: string) => {
+    dispatch(changeCity(city));
+  };
 
   const handleListItemHover = (placeId: string) => {
     const currentOffer = cityOffers.find((offer) => offer.id === placeId);
