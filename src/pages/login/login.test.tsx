@@ -12,7 +12,7 @@ describe('Component: Login', () => {
     render(withStoreComponent);
 
     const loginButton = screen.getByRole('button', { name: /Sign in/i });
-    const navigationLink = screen.getByRole('link', { name: /Amsterdam/i });
+    const navigationLink = screen.getByTestId('random-city-link');
 
     expect(screen.getByRole('heading', { name: /sign in/i })).toBeInTheDocument();
     expect(screen.getByLabelText(/E-mail/i)).toBeInTheDocument();

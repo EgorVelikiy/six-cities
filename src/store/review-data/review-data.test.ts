@@ -6,6 +6,7 @@ import { ReviewState } from '../../types/state';
 describe('Review slice', () => {
   const reviewState: ReviewState = {
     reviews: [],
+    isFormSubmitting: false,
     isReviewsLoading: false,
     error: null,
   };
@@ -63,7 +64,7 @@ describe('Review slice', () => {
 
   describe('postReview', () => {
     it('should return "isReviewsLoading" to "true", "error" to "null" with "postReview.pending"', () => {
-      const expectedState = { ...reviewState, isReviewsLoading: true };
+      const expectedState = { ...reviewState, isFormSubmitting: true };
 
       const result = ReviewSlice.reducer(undefined, postReview.pending);
 

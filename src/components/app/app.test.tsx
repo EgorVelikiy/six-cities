@@ -34,7 +34,7 @@ describe('Application Routing', () => {
     render(withStoreComponent);
 
     expect(screen.getByRole('heading', { name: /sign in/i })).toBeInTheDocument();
-    expect(screen.getByText(/Amsterdam/i));
+    expect(screen.getByTestId('random-city-link')).toBeInTheDocument();
     const submitButton = screen.getByRole('button', { name: /sign in/i });
     expect(submitButton).toBeInTheDocument();
   });
