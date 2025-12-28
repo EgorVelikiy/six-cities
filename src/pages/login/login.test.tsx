@@ -1,6 +1,6 @@
 import { withHistory, withStore } from '../../utils/mock-component';
 import { render, screen } from '@testing-library/react';
-import { makeFakeStore } from '../../utils/mocs';
+import { makeFakeStore } from '../../utils/mocks';
 import Login from './login';
 import userEvent from '@testing-library/user-event';
 

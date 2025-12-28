@@ -1,7 +1,7 @@
 import { createMemoryHistory, MemoryHistory } from 'history';
 import { withHistory, withStore } from '../../utils/mock-component';
 import { render, screen } from '@testing-library/react';
-import { makeFakeFavorites, makeFakeOffersList, makeFakeStore } from '../../utils/mocs';
+import { makeFakeFavorites, makeFakeOffersList, makeFakeStore } from '../../utils/mocks';
 import { AppRoute, AuthStatus } from '../../const';
 import App from './app';
 

@@ -1,5 +1,5 @@
 import { getReviewsList, postReview } from '../api-actions/review';
-import { makeFakeReviewsList } from '../../utils/mocs';
+import { makeFakeReviewsList } from '../../utils/mocks';
 import { ReviewSlice } from '../review-data/review-data';
 import { ReviewState } from '../../types/state';
 
